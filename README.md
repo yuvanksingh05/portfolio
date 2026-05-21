@@ -36,13 +36,6 @@ My goal is to become an AI Engineer.
 - Skills showcase
 - Contact section
 
-## Live Website
-
-(Add your GitHub Pages link here after hosting)
-
-Example:
-https://yourusername.github.io/portfolio/
-
 ## Project Structure
 
 portfolio/
