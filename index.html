@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuvank Singh — AI & Data Science Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════ LOADER ═══════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">YS</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-text"><span class="mono">initializing portfolio...</span></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════ CURSOR ════════════════════════════════════════ -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ══════════════════════════════════ PARTICLE CANVAS ══════════════════════════════════ -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ═══════════════════════════════════════ NAV ═════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">[</span>YS<span class="logo-bracket">]</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+        <li><a href="#education" class="nav-link" data-text="Education">Education</a></li>
+        <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
+        <li><a href="#roadmap" class="nav-link" data-text="Roadmap">Roadmap</a></li>
+        <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════ HERO ══════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-grid">
+
+      <!-- Left: text -->
+      <div class="hero-text">
+        <div class="hero-badge reveal-up">
+          <span class="badge-dot"></span>
+          <span class="mono">Available for opportunities</span>
+        </div>
+        <h1 class="hero-name reveal-up delay-1">
+          <span class="name-line">Yuvank</span>
+          <span class="name-line accent-gradient">Singh</span>
+        </h1>
+        <div class="hero-role reveal-up delay-2">
+          <span class="mono role-prefix">_role: </span>
+          <span id="typed-text" class="typed"></span><span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-desc reveal-up delay-3">
+          BTech student in AI & Data Science, building toward a future as an
+          AI Engineer. Passionate about intelligent systems, machine learning,
+          and the intersection of AI with defense technologies.
+        </p>
+        <div class="hero-cta reveal-up delay-4">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+        <div class="hero-stats reveal-up delay-5">
+          <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Projects</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Hackathons</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">2028</span><span class="stat-label">Graduating</span></div>
+        </div>
+      </div>
+
+      <!-- Right: avatar -->
+      <div class="hero-visual reveal-fade delay-3">
+        <div class="avatar-frame">
+          <div class="avatar-glow"></div>
+          <div class="avatar-ring ring-1"></div>
+          <div class="avatar-ring ring-2"></div>
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="80" r="40" fill="url(#ag)"/>
+              <ellipse cx="100" cy="170" rx="60" ry="40" fill="url(#ag2)"/>
+              <defs>
+                <linearGradient id="ag" x1="60" y1="40" x2="140" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#7df9ff"/>
+                  <stop offset="1" stop-color="#4f46e5"/>
+                </linearGradient>
+                <linearGradient id="ag2" x1="40" y1="130" x2="160" y2="200" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#7df9ff" stop-opacity="0.6"/>
+                  <stop offset="1" stop-color="#4f46e5" stop-opacity="0.3"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="avatar-label mono">profile.jpg</div>
+          </div>
+          <div class="floating-chip chip-1 mono">AI Engineer</div>
+          <div class="floating-chip chip-2 mono">Python</div>
+          <div class="floating-chip chip-3 mono">ML</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="mono">scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ ABOUT ════════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="mono section-num">01.</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-card glass reveal-left">
+          <div class="card-icon">🧠</div>
+          <h3>Who I Am</h3>
+          <p>I'm Yuvank Singh, a passionate BTech student specializing in Artificial Intelligence and Data Science at Government Engineering College Bharatpur.</p>
+        </div>
+        <div class="about-card glass reveal-up delay-1">
+          <div class="card-icon">🎯</div>
+          <h3>What Drives Me</h3>
+          <p>I'm fascinated by intelligent systems and how AI can solve real-world problems — especially in critical domains like defense and advanced technologies.</p>
+        </div>
+        <div class="about-card glass reveal-right delay-2">
+          <div class="card-icon">🚀</div>
+          <h3>Where I'm Headed</h3>
+          <p>My goal is to become an AI Engineer who builds impactful applications, crack GATE DA, and contribute to cutting-edge AI + defense technology.</p>
+        </div>
+        <div class="about-bio glass reveal-up delay-3">
+          <div class="bio-content">
+            <p>Currently in the early stages of my engineering journey, I focus on building a strong foundation in programming, machine learning, and data science. I participate in hackathons to sharpen problem-solving skills and collaborate with like-minded innovators.</p>
+            <p>I believe AI is not just a technology — it's the next frontier of human capability. I want to be at that frontier.</p>
+          </div>
+          <div class="bio-tags">
+            <span class="tag">#AI</span>
+            <span class="tag">#MachineLearning</span>
+            <span class="tag">#DataScience</span>
+            <span class="tag">#DefenseTech</span>
+            <span class="tag">#Python</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ EDUCATION ═════════════════════════════════════ -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="mono section-num">02.</span>
+        <h2 class="section-title">Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-header">
+              <span class="tl-icon">🎓</span>
+              <div>
+                <h3>Bachelor of Technology</h3>
+                <span class="tl-branch mono">Artificial Intelligence & Data Science</span>
+              </div>
+              <span class="tl-badge">Current</span>
+            </div>
+            <div class="tl-body">
+              <div class="tl-info-row">
+                <span class="tl-label mono">College:</span>
+                <span>Government Engineering College Bharatpur</span>
+              </div>
+              <div class="tl-info-row">
+                <span class="tl-label mono">University:</span>
+                <span>Rajasthan Technical University, Kota</span>
+              </div>
+              <div class="tl-info-row">
+                <span class="tl-label mono">Graduation:</span>
+                <span>Expected 2028</span>
+              </div>
+              <div class="tl-progress-wrap">
+                <div class="tl-progress-label">
+                  <span class="mono">Progress</span>
+                  <span class="mono">~25%</span>
+                </div>
+                <div class="tl-progress-bar"><div class="tl-progress-fill" data-width="25"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-header">
+              <span class="tl-icon">📚</span>
+              <div>
+                <h3>Senior Secondary (XII)</h3>
+                <span class="tl-branch mono">Science Stream — PCM</span>
+              </div>
+              <span class="tl-badge completed">Completed</span>
+            </div>
+            <div class="tl-body">
+              <div class="tl-info-row">
+                <span class="tl-label mono">Board:</span>
+                <span>Rajasthan Board of Secondary Education</span>
+              </div>
+              <div class="tl-info-row">
+                <span class="tl-label mono">Stream:</span>
+                <span>Physics, Chemistry, Mathematics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ SKILLS ════════════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="mono section-num">03.</span>
+        <h2 class="section-title">Skills</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+
+        <!-- Programming -->
+        <div class="skill-group glass reveal-left">
+          <div class="skill-group-header">
+            <span class="skill-group-icon">💻</span>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Python</span><span class="mono skill-pct">75%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>HTML</span><span class="mono skill-pct">70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>CSS</span><span class="mono skill-pct">65%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>JavaScript</span><span class="mono skill-pct">50%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI & Data -->
+        <div class="skill-group glass reveal-up delay-1">
+          <div class="skill-group-header">
+            <span class="skill-group-icon">🤖</span>
+            <h3>AI & Data</h3>
+          </div>
+          <div class="skill-circles">
+            <div class="skill-circle-item">
+              <div class="circle-wrap">
+                <svg class="circle-svg" viewBox="0 0 60 60">
+                  <circle class="circle-bg" cx="30" cy="30" r="24"/>
+                  <circle class="circle-prog" cx="30" cy="30" r="24" data-pct="40" stroke-dasharray="0 999"/>
+                </svg>
+                <span class="circle-pct mono">40%</span>
+              </div>
+              <span class="circle-label">ML</span>
+            </div>
+            <div class="skill-circle-item">
+              <div class="circle-wrap">
+                <svg class="circle-svg" viewBox="0 0 60 60">
+                  <circle class="circle-bg" cx="30" cy="30" r="24"/>
+                  <circle class="circle-prog" cx="30" cy="30" r="24" data-pct="45" stroke-dasharray="0 999"/>
+                </svg>
+                <span class="circle-pct mono">45%</span>
+              </div>
+              <span class="circle-label">Data Science</span>
+            </div>
+            <div class="skill-circle-item">
+              <div class="circle-wrap">
+                <svg class="circle-svg" viewBox="0 0 60 60">
+                  <circle class="circle-bg" cx="30" cy="30" r="24"/>
+                  <circle class="circle-prog" cx="30" cy="30" r="24" data-pct="50" stroke-dasharray="0 999"/>
+                </svg>
+                <span class="circle-pct mono">50%</span>
+              </div>
+              <span class="circle-label">NumPy</span>
+            </div>
+            <div class="skill-circle-item">
+              <div class="circle-wrap">
+                <svg class="circle-svg" viewBox="0 0 60 60">
+                  <circle class="circle-bg" cx="30" cy="30" r="24"/>
+                  <circle class="circle-prog" cx="30" cy="30" r="24" data-pct="48" stroke-dasharray="0 999"/>
+                </svg>
+                <span class="circle-pct mono">48%</span>
+              </div>
+              <span class="circle-label">Pandas</span>
+            </div>
+            <div class="skill-circle-item">
+              <div class="circle-wrap">
+                <svg class="circle-svg" viewBox="0 0 60 60">
+                  <circle class="circle-bg" cx="30" cy="30" r="24"/>
+                  <circle class="circle-prog" cx="30" cy="30" r="24" data-pct="30" stroke-dasharray="0 999"/>
+                </svg>
+                <span class="circle-pct mono">30%</span>
+              </div>
+              <span class="circle-label">Azure AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-group glass reveal-right delay-2">
+          <div class="skill-group-header">
+            <span class="skill-group-icon">🛠️</span>
+            <h3>Tools</h3>
+          </div>
+          <div class="tool-chips">
+            <div class="tool-chip">
+              <span class="tool-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.6 10.59L8.38 4.8l1.69 1.7c-.24.85.15 1.78.93 2.23v5.54c-.6.34-1 .99-1 1.73a2 2 0 002 2 2 2 0 002-2c0-.74-.4-1.39-1-1.73V9.41l2.07 2.09c-.07.15-.07.32-.07.5a2 2 0 002 2 2 2 0 002-2 2 2 0 00-2-2c-.2 0-.37.03-.54.09L11.03 7.2a2 2 0 00-1.03-2.17V3a2 2 0 00-2-2 2 2 0 00-2 2v2.03A2 2 0 004.83 7.2L2.6 10.59z"/></svg>
+              </span>
+              <span>Git</span>
+            </div>
+            <div class="tool-chip">
+              <span class="tool-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </span>
+              <span>GitHub</span>
+            </div>
+            <div class="tool-chip">
+              <span class="tool-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 00-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 00-1.276.057L.327 7.261A1 1 0 00.326 8.74L3.899 12 .326 15.26a1 1 0 00.001 1.479L1.65 17.94a.999.999 0 001.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 001.704.29l4.942-2.377A1.5 1.5 0 0024 19.06V4.94a1.5 1.5 0 00-.85-1.353zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/></svg>
+              </span>
+              <span>VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ PROJECTS ══════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="mono section-num">04.</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card glass reveal-up">
+          <div class="project-img">
+            <div class="project-img-bg" style="--c1:#7df9ff;--c2:#4f46e5">
+              <div class="project-img-icon">🤖</div>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn">View Details</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>AI Chatbot</h3>
+            <p>An intelligent conversational AI assistant built with Python and NLP techniques, capable of understanding context and providing smart responses.</p>
+            <div class="project-stack">
+              <span class="stack-tag">Python</span>
+              <span class="stack-tag">NLP</span>
+              <span class="stack-tag">ML</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link-btn github-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="project-link-btn demo-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass reveal-up delay-1">
+          <div class="project-img">
+            <div class="project-img-bg" style="--c1:#f97316;--c2:#7c3aed">
+              <div class="project-img-icon">📊</div>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn">View Details</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Data Analysis Dashboard</h3>
+            <p>Interactive data visualization dashboard for exploring and analyzing datasets with real-time charts, filters, and statistical insights.</p>
+            <div class="project-stack">
+              <span class="stack-tag">Python</span>
+              <span class="stack-tag">Pandas</span>
+              <span class="stack-tag">NumPy</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link-btn github-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="project-link-btn demo-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass reveal-up delay-2">
+          <div class="project-img">
+            <div class="project-img-bg" style="--c1:#10b981;--c2:#0ea5e9">
+              <div class="project-img-icon">🔮</div>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn">View Details</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>ML Predictor</h3>
+            <p>Machine learning prediction model that analyzes historical data patterns to forecast outcomes with high accuracy using regression algorithms.</p>
+            <div class="project-stack">
+              <span class="stack-tag">Python</span>
+              <span class="stack-tag">Scikit-learn</span>
+              <span class="stack-tag">ML</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link-btn github-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="project-link-btn demo-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass reveal-up delay-3">
+          <div class="project-img">
+            <div class="project-img-bg" style="--c1:#ec4899;--c2:#f59e0b">
+              <div class="project-img-icon">🌐</div>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn">View Details</a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Portfolio Website</h3>
+            <p>This very portfolio — a futuristic, dark-mode single-page website showcasing skills, projects, and journey as an AI engineer in training.</p>
+            <div class="project-stack">
+              <span class="stack-tag">HTML</span>
+              <span class="stack-tag">CSS</span>
+              <span class="stack-tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link-btn github-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="project-link-btn demo-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ EXPERIENCE ════════════════════════════════════ -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="mono section-num">05.</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-card glass reveal-left">
+          <div class="exp-card-header">
+            <div class="exp-icon">🏆</div>
+            <div>
+              <h3>Hackathon Participant</h3>
+              <span class="mono exp-sub">Multiple Events · 2024–Present</span>
+            </div>
+          </div>
+          <p>Participated in competitive hackathons, collaborating with teams to build innovative solutions under time constraints. Appreciated by hackathon organizers for problem-solving approach and teamwork.</p>
+          <ul class="exp-list">
+            <li>Collaborated in cross-functional teams</li>
+            <li>Built working prototypes within deadlines</li>
+            <li>Received appreciation from organizers</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">Team Collaboration</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Innovation</span>
+          </div>
+        </div>
+
+        <div class="exp-card glass reveal-right delay-1">
+          <div class="exp-card-header">
+            <div class="exp-icon">📖</div>
+            <div>
+              <h3>Self-Learning Journey</h3>
+              <span class="mono exp-sub">Ongoing · 2023–Present</span>
+            </div>
+          </div>
+          <p>Continuously expanding knowledge in AI, machine learning, and data science through structured self-study, online courses, and hands-on projects.</p>
+          <ul class="exp-list">
+            <li>Learning Machine Learning from scratch</li>
+            <li>Studying for Microsoft Azure AI-102</li>
+            <li>Building projects to reinforce concepts</li>
+            <li>Preparing for GATE DA examination</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">AI/ML</span>
+            <span class="tag">Azure</span>
+            <span class="tag">GATE Prep</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ ROADMAP ═══════════════════════════════════════ -->
+  <section id="roadmap">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="mono section-num">06.</span>
+        <h2 class="section-title">Roadmap</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="roadmap-wrap">
+        <div class="roadmap-line"></div>
+        <div class="roadmap-items">
+
+          <div class="roadmap-item active reveal-up">
+            <div class="rm-dot active"></div>
+            <div class="rm-year mono">2024–2025</div>
+            <div class="rm-card glass">
+              <div class="rm-status active-status">🟢 In Progress</div>
+              <h3>Foundation Building</h3>
+              <ul>
+                <li>Master Python programming</li>
+                <li>Learn HTML, CSS, JavaScript</li>
+                <li>Understand ML fundamentals</li>
+                <li>Complete BTech Year 1 & 2</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item reveal-up delay-1">
+            <div class="rm-dot"></div>
+            <div class="rm-year mono">2026</div>
+            <div class="rm-card glass">
+              <div class="rm-status">🔵 Planned</div>
+              <h3>Learn ML & DS Deeply</h3>
+              <ul>
+                <li>Deep dive into Machine Learning</li>
+                <li>Master Data Science pipeline</li>
+                <li>Get Azure AI-102 Certified</li>
+                <li>Start GATE DA preparation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item reveal-up delay-2">
+            <div class="rm-dot"></div>
+            <div class="rm-year mono">2027</div>
+            <div class="rm-card glass">
+              <div class="rm-status">🔵 Planned</div>
+              <h3>Build Impactful Projects</h3>
+              <ul>
+                <li>Build 5+ AI/ML projects</li>
+                <li>Contribute to open source AI</li>
+                <li>Crack GATE DA examination</li>
+                <li>Explore AI + Defense Tech</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap-item reveal-up delay-3">
+            <div class="rm-dot future"></div>
+            <div class="rm-year mono">2028</div>
+            <div class="rm-card glass future-card">
+              <div class="rm-status">⭐ Goal</div>
+              <h3>AI Engineer</h3>
+              <ul>
+                <li>Graduate with BTech (AI & DS)</li>
+                <li>Land AI Engineer role</li>
+                <li>Work on AI + Defense systems</li>
+                <li>Build next-generation AI apps</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ CERTIFICATIONS ═══════════════════════════════════ -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="mono section-num">07.</span>
+        <h2 class="section-title">Certifications</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card glass reveal-left">
+          <div class="cert-logo azure">
+            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.259 5.655L14.645 44.977l21.18 29.79-24.937 3.55L48 90.343l33.357-11.85L34.259 5.655z" fill="#0078D4"/><path d="M57.14 5.655L33.63 72.02l-.032.001 21.18 29.79 26.578-29.79L57.14 5.655z" fill="#50E6FF"/></svg>
+          </div>
+          <div class="cert-content">
+            <div class="cert-badge in-progress">In Progress</div>
+            <h3>Microsoft Azure AI-102</h3>
+            <p class="mono cert-issuer">Microsoft</p>
+            <p>Designing & Implementing an Azure AI Solution. Covers computer vision, NLP, knowledge mining, and conversational AI.</p>
+          </div>
+        </div>
+
+        <div class="cert-card glass reveal-up delay-1 cert-placeholder">
+          <div class="cert-logo placeholder-logo">
+            <span>📜</span>
+          </div>
+          <div class="cert-content">
+            <div class="cert-badge planned">Planned</div>
+            <h3>GATE DA</h3>
+            <p class="mono cert-issuer">IIT / IISc</p>
+            <p>Graduate Aptitude Test in Engineering — Data Science & Artificial Intelligence. Target year: 2027.</p>
+          </div>
+        </div>
+
+        <div class="cert-card glass reveal-right delay-2 cert-placeholder">
+          <div class="cert-logo placeholder-logo">
+            <span>🏅</span>
+          </div>
+          <div class="cert-content">
+            <div class="cert-badge planned">Future</div>
+            <h3>More Coming Soon...</h3>
+            <p class="mono cert-issuer">Various Platforms</p>
+            <p>Continuously learning and earning certifications in AI, ML, Data Science, and Cloud technologies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="mono section-num">08.</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <h3>Let's Connect</h3>
+          <p>I'm open to collaboration, mentorship, internship opportunities, and interesting conversations about AI and technology.</p>
+          <div class="contact-links">
+            <a href="https://linkedin.com/in/yuvank-singh" target="_blank" class="contact-social-btn linkedin">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/yuvanksingh" target="_blank" class="contact-social-btn github">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="mailto:yuvanksingh@email.com" class="contact-social-btn email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap glass reveal-right delay-1">
+          <form class="contact-form" id="contactForm">
+            <div class="form-field">
+              <label class="mono" for="name">Name</label>
+              <input type="text" id="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-field">
+              <label class="mono" for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-field">
+              <label class="mono" for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <span>✅ Message sent! I'll get back to you soon.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>YS<span class="logo-bracket">]</span>
+      </div>
+      <p class="footer-quote">"Building intelligence for the future."</p>
+      <div class="footer-links">
+        <a href="#hero">Top</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy mono">© 2026 Yuvank Singh · Built with passion &amp; pixels</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
